@@ -26,7 +26,7 @@ from langchain.document_loaders import WebBaseLoader
 import openai
 
 print("Started")
-st.set_page_config(page_title='Your Enterprise Sidekick', page_icon='🚀')
+st.set_page_config(page_title='Pravin''s Sidekick', page_icon='🚀')
 
 # Get a unique session id for memory
 if "session_id" not in st.session_state:

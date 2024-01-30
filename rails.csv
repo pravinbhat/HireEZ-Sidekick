@@ -1,9 +1,6 @@
 username,key,value
-postnl,1,Wat is PostNL?
-postnl,2,Wat nou als ik veel pakketten moet versturen?
-postnl,3,Vertel me meer over de haalservice
-postnl,4,Schrijf een mail voor een prospect over de haalservice
-postnl,5,Wat zijn de duurzaamheidsvoordelen van de haalservice?
+hireez,1,What is HireEZ?
+hireez,2,What are the main benefits of using HireEz?
 datastax,1,What is DataStax?
 datastax,2,What is Vector Search?
 datastax,3,Tell me more about why Astra DB is the best!
