@@ -209,6 +209,23 @@ Question:
 
 Answer in {language}:"""
 
+    if type == 'Customer Info':
+        print ("Prompt type: Customer Info")
+        template = f"""You're a helpful AI assistant tasked to only answer the user's questions about their customers.
+You can provide individual customer details like their name, location, contact details, company, website.
+You can also provide aggregated customer info like how many customers belong to a particular city.
+You're friendly and you answer extensively with multiple sentences but do not use bulletpoints. 
+Instead start with 'The customer's name is' or 'The customer's details are as follow'.
+If you don't know the answer or if the question is not about a customer, just say 'I can only talk about our customers'.
+
+Use only the following context to answer the question:
+{{context}}
+
+Question:
+{{question}}
+
+Answer in {language}:"""
+
     if type == 'Custom':
         print ("Prompt type: Custom")
         template = custom_prompt
@@ -430,7 +447,7 @@ with st.sidebar:
     #chain_type = st.selectbox('Chain type:', ('Stuff', 'Refine', 'Map Reduce'), disabled=disable_vector_store)
     chain_type = "Stuff"
     strategy = st.selectbox('RAG strategy:', ('Basic Retrieval', 'Maximal Marginal Relevance', 'Fusion'), help="Basic retrieval finds the most relevant document with potential duplicate information.\nMMR ensures a balance between relevancy and diversity in the items retrieved.\n Fusion generates a set of additional relevant queries to retrieve relevant documents.", disabled=disable_vector_store)
-    prompt_type = st.selectbox('System Prompt:', ('Short results', 'Extended results', 'Custom'))
+    prompt_type = st.selectbox('System Prompt:', ('Short results', 'Extended results', 'Customer Info', 'Custom'))
     print(f"""{disable_vector_store}, {top_k_history}, {top_k_vectorstore}, {chain_type}, {strategy}, {prompt_type}""")
     custom_prompt = st.text_area('Custom Prompt:', """You're a Code Co-Pilot who helps users write amazing code. Using the context, provide examples in markdown and explain how it all ties together.
 
